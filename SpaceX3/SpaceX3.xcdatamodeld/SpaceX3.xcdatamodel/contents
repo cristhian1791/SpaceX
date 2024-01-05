@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21E230" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="FlickrImagesCore" representedClassName="FlickrImagesCore" syncable="YES">
+        <attribute name="imgUrl" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="LaunchesCore" representedClassName="LaunchesCore" syncable="YES">
+        <attribute name="dateLocal" optional="YES" attributeType="String"/>
+        <attribute name="dateUnix" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="details" optional="YES" attributeType="String"/>
+        <attribute name="missionName" optional="YES" attributeType="String"/>
+        <attribute name="missionPatchUrl" optional="YES" attributeType="String"/>
+        <attribute name="rocketName" optional="YES" attributeType="String"/>
+        <attribute name="rocketType" optional="YES" attributeType="String"/>
+        <attribute name="siteName" optional="YES" attributeType="String"/>
+        <attribute name="siteNameLong" optional="YES" attributeType="String"/>
+        <relationship name="linkRelation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LinksCore" inverseName="launchesRelation" inverseEntity="LinksCore"/>
+    </entity>
+    <entity name="LinksCore" representedClassName="LinksCore" syncable="YES">
+        <attribute name="articleLink" optional="YES" attributeType="String"/>
+        <attribute name="flickrImages" optional="YES" attributeType="Transformable"/>
+        <attribute name="youtubeID" optional="YES" attributeType="String"/>
+        <relationship name="launchesRelation" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LaunchesCore" inverseName="linkRelation" inverseEntity="LaunchesCore"/>
+    </entity>
+    <elements>
+        <element name="FlickrImagesCore" positionX="-36" positionY="9" width="128" height="44"/>
+        <element name="LaunchesCore" positionX="-503.7376708984375" positionY="-121.8615112304688" width="128" height="178"/>
+        <element name="LinksCore" positionX="-199.464111328125" positionY="-138.9448547363281" width="128" height="89"/>
+    </elements>
+</model>
